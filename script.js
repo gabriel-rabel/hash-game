@@ -1,4 +1,4 @@
-//
+
 
 const leftTopDiv = document.getElementById("left-top-div");
 const middleTopDiv = document.getElementById("middle-top-div");
@@ -73,9 +73,7 @@ function verifyEndGame() {
   let selectDiv = document.querySelectorAll(".free");
   if (!selectDiv.length) {
     alert("Fim do Jogo");
-  } else {
-    result();
-  }
+  } 
 }
 //Result verify
 function result() {
@@ -85,7 +83,7 @@ function result() {
     rightTopDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     leftMiddleDiv.innerText === "X" &&
@@ -93,7 +91,7 @@ function result() {
     rightMiddleDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     leftBottomDiv.innerText === "X" &&
@@ -101,7 +99,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     leftTopDiv.innerText === "O" &&
@@ -109,7 +107,7 @@ function result() {
     rightTopDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     leftMiddleDiv.innerText === "O" &&
@@ -117,7 +115,7 @@ function result() {
     rightMiddleDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     leftBottomDiv.innerText === "O" &&
@@ -125,7 +123,7 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     leftTopDiv.innerText === "X" &&
@@ -133,7 +131,7 @@ function result() {
     leftBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     middleTopDiv.innerText === "X" &&
@@ -141,7 +139,7 @@ function result() {
     middleBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     rightTopDiv.innerText === "X" &&
@@ -149,7 +147,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     leftTopDiv.innerText === "O" &&
@@ -157,7 +155,7 @@ function result() {
     leftBottomDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     middleTopDiv.innerText === "O" &&
@@ -165,7 +163,7 @@ function result() {
     middleBottomDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     rightTopDiv.innerText === "O" &&
@@ -173,7 +171,7 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
   if (
     leftTopDiv.innerText === "X" &&
@@ -181,7 +179,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
-    return;
+    endGame();
   }
   if (
     leftTopDiv.innerText === "O" &&
@@ -189,7 +187,12 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do jogador do Computador");
-    return;
+    endGame();
   }
-  console.log("Entrei e sai do if result");
+}
+
+//End Game
+function endGame(){
+    alert("Vamos reinicar o jogo");
+    window.location.reload();
 }
