@@ -30,8 +30,8 @@ function initGame() {
         countX++;
         hashDiv.classList.remove("free");
         setTimeout(function () {
-          result();
           verifyEndGame();
+          result();
         }, 200);
       }
       setTimeout(computerChoice, 1000);
@@ -54,7 +54,6 @@ function verifyTurn() {
 //computer turn
 
 function computerChoice() {
-  setTimeout(2000);
   let selectDiv = document.querySelectorAll(".free");
   if (selectDiv.length === 0) {
     return;
@@ -85,7 +84,7 @@ function result() {
     middleTopDiv.innerText === "X" &&
     rightTopDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -93,7 +92,7 @@ function result() {
     middleMiddleDiv.innerText === "X" &&
     rightMiddleDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -101,7 +100,7 @@ function result() {
     middleBottomDiv.innerText === "X" &&
     rightBottomDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -109,7 +108,7 @@ function result() {
     middleTopDiv.innerText === "O" &&
     rightTopDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -117,7 +116,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     rightMiddleDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -125,7 +124,7 @@ function result() {
     middleBottomDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -133,7 +132,7 @@ function result() {
     leftMiddleDiv.innerText === "X" &&
     leftBottomDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -141,7 +140,7 @@ function result() {
     middleMiddleDiv.innerText === "X" &&
     middleBottomDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -149,7 +148,7 @@ function result() {
     rightMiddleDiv.innerText === "X" &&
     rightBottomDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -157,7 +156,7 @@ function result() {
     leftMiddleDiv.innerText === "O" &&
     leftBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -165,7 +164,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     middleBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -173,7 +172,7 @@ function result() {
     rightMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   if (
@@ -181,7 +180,7 @@ function result() {
     middleMiddleDiv.innerText === "X" &&
     rightBottomDiv.innerText === "X"
   ) {
-    alert("Vitória do jogador X");
+    alert("Parabéns, você venceu!");
     return;
   }
   if (
@@ -189,7 +188,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador O");
+    alert("Vitória do jogador do Computador");
     return;
   }
   console.log("Entrei e sai do if result");
