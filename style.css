@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
+.input-game {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(231, 158, 158);
+    border-style: solid;
+    border-color: black;
+
+}
