@@ -73,6 +73,7 @@ function verifyEndGame() {
   let selectDiv = document.querySelectorAll(".free");
   if (!selectDiv.length) {
     alert("Fim do Jogo");
+    endGame();
   } 
 }
 //Result verify

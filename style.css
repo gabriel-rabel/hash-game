@@ -11,10 +11,18 @@
 
 
 .input-game {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(231, 158, 158);
+    width: 100px;
+    height: 100px;
+    background-color: rgb(120, 216, 192);
     border-style: solid;
-    border-color: black;
+
 
 }
+header {
+    min-width: 100vw;
+    min-height: 20vh;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+}
+
