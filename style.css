@@ -19,10 +19,25 @@
 
 }
 header {
+    background-color: rgb(24, 170, 126);
     min-width: 100vw;
-    min-height: 20vh;
+    min-height: 15vh;
     text-align: center;
     justify-content: center;
     padding: 10px;
 }
 
+footer {
+    background-color: rgb(24, 170, 126);
+    min-width: 100vw;
+    min-height: 5vh;
+}
+
+h1 {
+    color: white;
+}
+
+section {
+    min-height: 60vh;
+    margin-top: 20vh;
+}
