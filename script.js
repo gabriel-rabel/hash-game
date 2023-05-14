@@ -9,8 +9,15 @@ const rightMiddleDiv = document.getElementById("right-middle-div");
 const leftBottomDiv = document.getElementById("left-bottom-div");
 const middleBottomDiv = document.getElementById("middle-bottom-div");
 const rightBottomDiv = document.getElementById("right-bottom-div");
+const restartButton = document.getElementById("restart-button");
 
-//contador de jogadas
+//restart game button
+restartButton.addEventListener("click", () =>{
+    window.location.reload();
+
+});
+
+//counter
 
 let countX = 0;
 let countO = 0;
