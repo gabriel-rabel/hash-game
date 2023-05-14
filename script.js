@@ -106,7 +106,7 @@ function result() {
     middleTopDiv.innerText === "O" &&
     rightTopDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -114,7 +114,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     rightMiddleDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -122,7 +122,7 @@ function result() {
     middleBottomDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -154,7 +154,7 @@ function result() {
     leftMiddleDiv.innerText === "O" &&
     leftBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -162,7 +162,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     middleBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -170,7 +170,7 @@ function result() {
     rightMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
   if (
@@ -186,7 +186,7 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
-    alert("Vitória do jogador do Computador");
+    alert("Vitória do Computador");
     endGame();
   }
 }
