@@ -1,3 +1,9 @@
+/*HASH GAME by Gabriel Rabel
+Bootcamp IronHack Project
+https://www.linkedin.com/in/gabrielrabel
+https://github.com/gabriel-rabel
+Enjoy...
+*/
 const leftTopDiv = document.getElementById("left-top-div");
 const middleTopDiv = document.getElementById("middle-top-div");
 const rightTopDiv = document.getElementById("right-top-div");
@@ -12,16 +18,16 @@ const playerCounter = document.getElementById("player-counter");
 const computerCounter = document.getElementById("computer-counter");
 const allDivs = document.querySelectorAll(".inputGame");
 
-//counter
 
+//counters
 let countX = 0;
 let countO = 0;
 
 let playerWin = 0;
 let computerWin = 0;
 
+//score
 totGame();
-
 function totGame(){
   playerCounter.innerText = playerWin;
   computerCounter.innerText = computerWin;
@@ -32,8 +38,8 @@ restartButton.addEventListener("click", () => {
   window.location.reload();
 });
 
+//init game
 initGame();
-//Player turn
 function initGame() {
   let selectDiv = document.querySelectorAll(".free");
   selectDiv.forEach((hashDiv) => {
@@ -51,13 +57,13 @@ function initGame() {
           result();
         }, 200);
       }
-      setTimeout(computerChoice, 1000);
+      setTimeout(computerChoice, 400);
       countO++;
     });
   });
 }
 
-//Verify Turn
+//Verify Player Turn
 let isPlayer = true;
 function verifyTurn() {
   if (countX <= countO) {
@@ -68,8 +74,7 @@ function verifyTurn() {
   return isPlayer;
 }
 
-//computer turn
-
+//Computer Turn
 function computerChoice() {
   let selectDiv = document.querySelectorAll(".free");
   if (selectDiv.length === 0) {
@@ -84,15 +89,6 @@ function computerChoice() {
     verifyEndGame();
   }, 200);
   +console.log(playerWin);
-}
-
-//End Game
-function verifyEndGame() {
-  let selectDiv = document.querySelectorAll(".free");
-  if (!selectDiv.length) {
-    alert("Fim do Jogo");
-    endGame();
-  }
 }
 
 //Result verify
@@ -225,13 +221,22 @@ function result() {
   }
 }
 
+//Verify End Game
+function verifyEndGame() {
+  let selectDiv = document.querySelectorAll(".free");
+  if (!selectDiv.length) {
+    alert("Fim do Jogo!");
+    endGame();
+  }
+}
+
 //End Game
 function endGame() {
-  alert("Vamos reinicar o jogo");
-  for (var i = 0; i < allDivs.length; i++) {
-    allDivs[i].textContent = "";
-    allDivs[i].classList.add("free");
-  }
+  alert("Vamos reinicar o jogo para você.");
+  allDivs.forEach((div)=> {
+    div.textContent = "";
+    div.classList.add("free");
+  })
   countX = 0;
   countO = 0;
   totGame();
