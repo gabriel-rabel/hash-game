@@ -1,5 +1,3 @@
-
-
 const leftTopDiv = document.getElementById("left-top-div");
 const middleTopDiv = document.getElementById("middle-top-div");
 const rightTopDiv = document.getElementById("right-top-div");
@@ -10,17 +8,29 @@ const leftBottomDiv = document.getElementById("left-bottom-div");
 const middleBottomDiv = document.getElementById("middle-bottom-div");
 const rightBottomDiv = document.getElementById("right-bottom-div");
 const restartButton = document.getElementById("restart-button");
-
-//restart game button
-restartButton.addEventListener("click", () =>{
-    window.location.reload();
-
-});
+const playerCounter = document.getElementById("player-counter");
+const computerCounter = document.getElementById("computer-counter");
+const allDivs = document.querySelectorAll(".inputGame");
 
 //counter
 
 let countX = 0;
 let countO = 0;
+
+let playerWin = 0;
+let computerWin = 0;
+
+totGame();
+
+function totGame(){
+  playerCounter.innerText = playerWin;
+  computerCounter.innerText = computerWin;
+}
+
+//restart game button
+restartButton.addEventListener("click", () => {
+  window.location.reload();
+});
 
 initGame();
 //Player turn
@@ -73,6 +83,7 @@ function computerChoice() {
     result();
     verifyEndGame();
   }, 200);
+  +console.log(playerWin);
 }
 
 //End Game
@@ -81,8 +92,9 @@ function verifyEndGame() {
   if (!selectDiv.length) {
     alert("Fim do Jogo");
     endGame();
-  } 
+  }
 }
+
 //Result verify
 function result() {
   if (
@@ -91,6 +103,7 @@ function result() {
     rightTopDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -99,6 +112,7 @@ function result() {
     rightMiddleDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -107,6 +121,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -115,6 +130,7 @@ function result() {
     rightTopDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -123,6 +139,7 @@ function result() {
     rightMiddleDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -131,6 +148,7 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -139,6 +157,7 @@ function result() {
     leftBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -147,6 +166,7 @@ function result() {
     middleBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -155,6 +175,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -163,6 +184,7 @@ function result() {
     leftBottomDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -171,6 +193,7 @@ function result() {
     middleBottomDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -179,6 +202,7 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
   if (
@@ -187,6 +211,7 @@ function result() {
     rightBottomDiv.innerText === "X"
   ) {
     alert("Parabéns, você venceu!");
+    playerWin++;
     endGame();
   }
   if (
@@ -195,12 +220,19 @@ function result() {
     rightBottomDiv.innerText === "O"
   ) {
     alert("Vitória do Computador");
+    computerWin++;
     endGame();
   }
 }
 
 //End Game
-function endGame(){
-    alert("Vamos reinicar o jogo");
-    window.location.reload();
+function endGame() {
+  alert("Vamos reinicar o jogo");
+  for (var i = 0; i < allDivs.length; i++) {
+    allDivs[i].textContent = "";
+    allDivs[i].classList.add("free");
+  }
+  countX = 0;
+  countO = 0;
+  totGame();
 }
