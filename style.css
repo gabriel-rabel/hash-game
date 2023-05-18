@@ -14,6 +14,7 @@
   min-width: 100px;
   height: 100px;
 }
+
 header {
   background-color: #4b52e5;
   min-width: 100vw;
@@ -48,5 +49,10 @@ h1 {
 
 a {
   color: white;
+
+}
+.swal2-styled.swal2-confirm {
+
+  background-color: #0d6efd !important;
 
 }
