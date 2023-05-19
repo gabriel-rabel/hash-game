@@ -15,55 +15,61 @@
 </header>
 
 <body>
-    <div class="d-flex">
+    <div class="d-flex justify-content-around">
         <section class="placar card d-flex m-3" style="width: 10rem;">
             <div class="card-header">
                 <h6>PLACAR</h6>
             </div>
             <div class="card-body d-flex gap-3">
                 <div>
-                    <p>Player: <span id="player-counter"></span></p>
-                    <p>Computador: <span id="computer-counter"></span></p>
+                    <p>Player: <span id="player-counter">0</span></p>
+                    <p>Computador: <span id="computer-counter">0</span></p>
                 </div>
             </div>
         </section>
         <div>
             <button class="btn btn-primary m-3" id="restart-button">Reinciar Jogo</button>
         </div>
+
     </div>
     <section class="mainGame container">
         <div class="game container d-flex justify-content-around" id="game-div">
 
             <div class="gameTab">
                 <div class="game-row d-flex" id="game-top">
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center" id="left-top-div">
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
+                        id="left-top-div">
                     </div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="middle-top-div"></div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="right-top-div"></div>
                 </div>
                 <div class="game-row d-flex" id="game-middle">
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="left-middle-div">
                     </div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="middle-middle-div"></div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="right-middle-div"></div>
                 </div>
                 <div class="game-row d-flex" id="game-bottom">
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="left-bottom-div">
                     </div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="middle-bottom-div"></div>
-                    <div class="free inputGame fs-1 d-flex justify-content-center align-items-center"
+                    <div class="free redLine inputGame fs-1 d-flex justify-content-center align-items-center"
                         id="right-bottom-div">
                     </div>
                 </div>
             </div>
     </section>
+    <div class="announce d-flex justify-content-around align-items-center">
+        <div class="hide" id="announce-win"><img src="./img/smile-emoji.png"/> Parabéns, você ganhou essa rodada!</div>
+        <div class="hide" id="announce-lose"><img src="./img/cry-emoji.png"/> Que pena! você perdeu essa rodada!</div>
+    </div>
     <footer class="d-flex justify-content-center align-items-center text-white fs-6">Developed by Gabriel Rabel<a
             href="https://github.com/gabriel-rabel"><img src="./img/github-icon.png" alt="Git hub de Gabriel Rabel">
         </a><a href="https://www.linkedin.com/in/gabrielrabel"><img src="./img/linkedin-icon.png"

@@ -16,6 +16,8 @@ const rightBottomDiv = document.getElementById("right-bottom-div");
 const restartButton = document.getElementById("restart-button");
 const playerCounter = document.getElementById("player-counter");
 const computerCounter = document.getElementById("computer-counter");
+const announceWin = document.getElementById("announce-win");
+const announceLose = document.getElementById("announce-lose");
 const allDivs = document.querySelectorAll(".inputGame");
 
 //counters
@@ -26,7 +28,7 @@ let playerWin = 0;
 let computerWin = 0;
 
 //score
-totGame();
+
 function totGame() {
   playerCounter.innerText = playerWin;
   computerCounter.innerText = computerWin;
@@ -48,18 +50,14 @@ function initGame() {
           icon: "warning",
           title: "Este campo já está em uso!",
         });
-        return;
       }
       if (verifyTurn() === true) {
         hashDiv.innerText = "X";
         countX++;
         hashDiv.classList.remove("free");
-        setTimeout(function () {
-          verifyEndGame();
-          result();
-        }, 200);
+        verifyEndGame();
       }
-      setTimeout(computerChoice, 400);
+      setTimeout(computerChoice, 800);
       countO++;
     });
   });
@@ -79,9 +77,6 @@ function verifyTurn() {
 //Computer Turn
 function computerChoice() {
   let selectDiv = document.querySelectorAll(".free");
-  if (selectDiv.length === 0) {
-    return;
-  }
   const randomDivIndex = Math.floor(Math.random() * selectDiv.length);
   const randomDiv = selectDiv[randomDivIndex];
   randomDiv.innerText = "O";
@@ -90,30 +85,24 @@ function computerChoice() {
     result();
     verifyEndGame();
   }, 200);
-  +console.log(playerWin);
 }
-
 //Result verify
 function result() {
+  //top row
   if (
     leftTopDiv.innerText === "X" &&
     middleTopDiv.innerText === "X" &&
     rightTopDiv.innerText === "X"
   ) {
-    winAlert();
-  }
-  if (
-    leftMiddleDiv.innerText === "X" &&
-    middleMiddleDiv.innerText === "X" &&
-    rightMiddleDiv.innerText === "X"
-  ) {
-    winAlert();
-  }
-  if (
-    leftBottomDiv.innerText === "X" &&
-    middleBottomDiv.innerText === "X" &&
-    rightBottomDiv.innerText === "X"
-  ) {
+    leftTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftTopDiv.classList.remove("redLine");
+    middleTopDiv.classList.remove("redLine");
+    rightTopDiv.classList.remove("redLine");
     winAlert();
   }
   if (
@@ -121,41 +110,96 @@ function result() {
     middleTopDiv.innerText === "O" &&
     rightTopDiv.innerText === "O"
   ) {
+    leftTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightTopDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftTopDiv.classList.remove("redLine");
+    middleTopDiv.classList.remove("redLine");
+    rightTopDiv.classList.remove("redLine");
     loseAlert();
   }
+  //bottom row
   if (
-    leftMiddleDiv.innerText === "O" &&
-    middleMiddleDiv.innerText === "O" &&
-    rightMiddleDiv.innerText === "O"
+    leftBottomDiv.innerText === "X" &&
+    middleBottomDiv.innerText === "X" &&
+    rightBottomDiv.innerText === "X"
   ) {
-    loseAlert();
+    leftBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftBottomDiv.classList.remove("redLine");
+    middleBottomDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
+    winAlert();
   }
   if (
     leftBottomDiv.innerText === "O" &&
     middleBottomDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
+    leftBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightBottomDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftBottomDiv.classList.remove("redLine");
+    middleBottomDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
     loseAlert();
   }
+  //middle row
+  if (
+    leftMiddleDiv.innerText === "X" &&
+    middleMiddleDiv.innerText === "X" &&
+    rightMiddleDiv.innerText === "X"
+  ) {
+    leftMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftMiddleDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    rightMiddleDiv.classList.remove("redLine");
+    winAlert();
+  }
+  if (
+    leftMiddleDiv.innerText === "O" &&
+    middleMiddleDiv.innerText === "O" &&
+    rightMiddleDiv.innerText === "O"
+  ) {
+    leftMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    middleMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    rightMiddleDiv.style.backgroundImage =
+      "url('./img/back-div-red-horizontal.png')";
+    leftMiddleDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    rightMiddleDiv.classList.remove("redLine");
+    loseAlert();
+  }
+
+  //left column
   if (
     leftTopDiv.innerText === "X" &&
     leftMiddleDiv.innerText === "X" &&
     leftBottomDiv.innerText === "X"
   ) {
-    winAlert();
-  }
-  if (
-    middleTopDiv.innerText === "X" &&
-    middleMiddleDiv.innerText === "X" &&
-    middleBottomDiv.innerText === "X"
-  ) {
-    winAlert();
-  }
-  if (
-    rightTopDiv.innerText === "X" &&
-    rightMiddleDiv.innerText === "X" &&
-    rightBottomDiv.innerText === "X"
-  ) {
+    leftTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftTopDiv.classList.remove("redLine");
+    leftMiddleDiv.classList.remove("redLine");
+    leftBottomDiv.classList.remove("redLine");
     winAlert();
   }
   if (
@@ -163,27 +207,80 @@ function result() {
     leftMiddleDiv.innerText === "O" &&
     leftBottomDiv.innerText === "O"
   ) {
+    leftTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    leftTopDiv.classList.remove("redLine");
+    leftMiddleDiv.classList.remove("redLine");
+    leftBottomDiv.classList.remove("redLine");
     loseAlert();
+  }
+  //middle column
+  if (
+    middleTopDiv.innerText === "X" &&
+    middleMiddleDiv.innerText === "X" &&
+    middleBottomDiv.innerText === "X"
+  ) {
+    middleTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    middleBottomDiv.classList.remove("redLine");
+    winAlert();
   }
   if (
     middleTopDiv.innerText === "O" &&
     middleMiddleDiv.innerText === "O" &&
     middleBottomDiv.innerText === "O"
   ) {
+    middleTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    middleTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    middleBottomDiv.classList.remove("redLine");
     loseAlert();
+  }
+  //right column
+  if (
+    rightTopDiv.innerText === "X" &&
+    rightMiddleDiv.innerText === "X" &&
+    rightBottomDiv.innerText === "X"
+  ) {
+    rightTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightTopDiv.classList.remove("redLine");
+    rightMiddleDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
+    winAlert();
   }
   if (
     rightTopDiv.innerText === "O" &&
     rightMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
+    rightTopDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightMiddleDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightBottomDiv.style.backgroundImage = "url('./img/back-div-red.png')";
+    rightTopDiv.classList.remove("redLine");
+    rightMiddleDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
     loseAlert();
   }
+  //transverse x to y
   if (
     leftTopDiv.innerText === "X" &&
     middleMiddleDiv.innerText === "X" &&
     rightBottomDiv.innerText === "X"
   ) {
+    leftTopDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    rightBottomDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    leftTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
     winAlert();
   }
   if (
@@ -191,6 +288,38 @@ function result() {
     middleMiddleDiv.innerText === "O" &&
     rightBottomDiv.innerText === "O"
   ) {
+    leftTopDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    rightBottomDiv.style.backgroundImage = "url('./img/back-div-red-xy.png')";
+    leftTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    rightBottomDiv.classList.remove("redLine");
+    loseAlert();
+  }
+  if (
+    rightTopDiv.innerText === "X" &&
+    middleMiddleDiv.innerText === "X" &&
+    leftBottomDiv.innerText === "X"
+  ) {
+    rightTopDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    leftBottomDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    rightTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    leftBottomDiv.classList.remove("redLine");
+    winAlert();
+  }
+  if (
+    rightTopDiv.innerText === "O" &&
+    middleMiddleDiv.innerText === "O" &&
+    leftBottomDiv.innerText === "O"
+  ) {
+    rightTopDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    middleMiddleDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    leftBottomDiv.style.backgroundImage = "url('./img/back-div-red-yx.png')";
+    rightTopDiv.classList.remove("redLine");
+    middleMiddleDiv.classList.remove("redLine");
+    leftBottomDiv.classList.remove("redLine");
     loseAlert();
   }
 }
@@ -198,7 +327,7 @@ function result() {
 //Verify End Game
 function verifyEndGame() {
   let selectDiv = document.querySelectorAll(".free");
-  if (!selectDiv.length) {
+  if (selectDiv.length === 0) {
     alert("Fim do Jogo!");
     endGame();
   }
@@ -213,33 +342,27 @@ function endGame() {
   countX = 0;
   countO = 0;
   totGame();
+  allDivs.forEach((div) => {
+    div.classList.add("redLine");
+  });
 }
 
 //Win Alert
-
 function winAlert() {
-  Swal.fire({
-    title: "Parabéns!",
-    text: "Você venceu essa rodada!",
-    imageUrl: "./img/smile-emoji.png",
-    imageWidth: 200,
-    imageHeight: 200,
-    imageAlt: "Smile Emoji",
-  });
+  announceWin.classList.remove("hide");
   playerWin++;
-  endGame();
+  setTimeout(() => {
+    endGame();
+    announceWin.classList.add("hide");
+  }, 3000);
 }
 
 //lose Alert
 function loseAlert() {
-  Swal.fire({
-    title: "Que pena!",
-    text: "Você perdeu essa rodada!",
-    imageUrl: "./img/cry-emoji.png",
-    imageWidth: 200,
-    imageHeight: 200,
-    imageAlt: "Crying Emoji",
-  });
+  announceLose.classList.remove("hide");
   computerWin++;
-  endGame();
+  setTimeout(() => {
+    endGame();
+    announceLose.classList.add("hide");
+  }, 3000);
 }
